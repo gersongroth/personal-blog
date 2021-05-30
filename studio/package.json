@@ -17,10 +17,12 @@
 		"@sanity/default-login": "^2.0.5",
 		"@sanity/desk-tool": "^2.0.5",
 		"@sanity/vision": "^2.0.5",
+		"bcp47": "^1.1.2",
 		"prop-types": "^15.6",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"react-hook-form": "^7.3.6",
+		"react-icons": "^4.2.0",
 		"sanity-plugin-asset-source-unsplash": "^0.1.3"
 	}
 }
