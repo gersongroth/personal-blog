@@ -45,6 +45,11 @@ export default {
                 title: 'URL',
                 name: 'href',
                 type: 'url'
+              },
+              {
+                name: 'exampleUsage',
+                title: 'Example usage',
+                type: 'code'
               }
             ]
           }
