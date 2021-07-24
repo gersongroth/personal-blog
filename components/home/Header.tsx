@@ -1,16 +1,19 @@
-const Header = ({ className = '', ...props }) => {
-    console.log(props);
+import { imageBuilder } from 'lib/sanity';
+import { HeaderProps } from 'types/header/Header';
+
+const Header = ({ className = '', hero, page }: HeaderProps) => {
     return (
         <div
-            className="w-full m-0 p-0 bg-cover bg-bottom"
+            className="w-full bg-cover bg-bottom mb-4"
             style={{
-                backgroundImage: "url('cover.jpg')",
+                backgroundImage: `url('${imageBuilder(hero.backgroundImage).width(1240).height(540).url()}')`,
                 height: '60vh',
                 maxHeight: '460px',
             }}>
-            <div className="container max-w-4xl mx-auto pt-16 md:pt-32 text-center break-normal">
-                <p className="text-white font-extrabold text-3xl md:text-5xl">Gerson Groth</p>
-                <p className="text-xl md:text-2xl text-gray-500 pt-4">Programação, dicas e ideias.</p>
+            <div className="flex justify-center items-center h-full">
+                {/* <p className="text-white font-extrabold text-3xl md:text-5xl">Gerson Groth</p>
+                <p className="text-xl md:text-2xl text-gray-500 pt-4">Programação, dicas e ideias.</p> */}
+                <p className="text-white font-extrabold text-3xl md:text-5xl">{page.title}</p>
             </div>
         </div>
     );

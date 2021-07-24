@@ -24,6 +24,11 @@ export default {
         title: 'Title',
       },
       {
+        name: 'subtitle',
+        type: 'string',
+        title: 'SubTitle',
+      },
+      {
         name: 'content',
         type: 'array',
         title: 'Page sections',
@@ -49,7 +54,7 @@ export default {
         fieldset: 'metadata',
       },
     ],
-  
+
     preview: {
       select: {
         title: 'title',

@@ -10,16 +10,20 @@ export default function Index({ allPosts, preview, page }: any) {
     console.log(page);
     const heroPost = allPosts[0];
     const morePosts = allPosts.slice(1);
+
+    console.info(heroPost);
     return (
         <>
             <Layout preview={preview}>
                 <Head>
                     <title>{page.title}</title>
                 </Head>
-                <Container>
+                <section>
                     {page.content.map((content: any) => (
-                        <>{content['_type'] === 'hero' && <Header page={page} />}</>
+                        <>{content['_type'] === 'hero' && <Header hero={content} page={page} />}</>
                     ))}
+                </section>
+                <Container>
                     {/* <Header page={page} />
                     <Intro /> */}
                     {heroPost && (
@@ -41,7 +45,10 @@ export default function Index({ allPosts, preview, page }: any) {
 
 export async function getStaticProps({ preview = false }) {
     const allPosts = await getAllPostsForHome(preview);
+    // TODO - filtrar apenas x primeirs posts
     const page = await getPage('home');
+
+    console.log(allPosts, page);
 
     if (!page) {
         return {
