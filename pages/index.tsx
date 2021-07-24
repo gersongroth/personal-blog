@@ -7,11 +7,9 @@ import MoreStories from '../components/more-stories';
 import { getAllPostsForHome, getPage } from '../lib/api';
 
 export default function Index({ allPosts, preview, page }: any) {
-    console.log(page);
     const heroPost = allPosts[0];
     const morePosts = allPosts.slice(1);
 
-    console.info(heroPost);
     return (
         <>
             <Layout preview={preview}>
@@ -47,8 +45,6 @@ export async function getStaticProps({ preview = false }) {
     const allPosts = await getAllPostsForHome(preview);
     // TODO - filtrar apenas x primeirs posts
     const page = await getPage('home');
-
-    console.log(allPosts, page);
 
     if (!page) {
         return {

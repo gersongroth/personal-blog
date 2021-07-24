@@ -7,6 +7,7 @@ export interface HeroContent {
 
 export interface HomePage {
     title: string;
+    subtitle?: string;
 }
 
 export interface HeaderProps {
