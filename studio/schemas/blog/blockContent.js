@@ -46,11 +46,6 @@ export default {
                 name: 'href',
                 type: 'url'
               },
-              {
-                name: 'exampleUsage',
-                title: 'Example usage',
-                type: 'code'
-              }
             ]
           }
         ]
@@ -62,6 +57,10 @@ export default {
     {
       type: 'image',
       options: {hotspot: true}
-    }
+    },
+    {
+        type: 'code'
+    },
+    { type: 'embedHTML' },
   ]
 }
