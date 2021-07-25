@@ -13,15 +13,17 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
+        "newLine": "LF",
         "jsx": "preserve",
         "useDefineForClassFields": true,
         "baseUrl": "./",
         "paths": {
             "@components/*": ["components/*"],
-            "@assets/*": ["assets/*"]
+            "@assets/*": ["assets/*"],
+            "@utils/*": ["utils/*"],
         }
     },
-    "include": ["pages", "public", "__mocks__", "__mocks__/.ts"],
-    "files": ["next-env.d.ts"],
+    "include": ["pages", "public", "__mocks__", "__mocks__/.ts", "**/*.d.ts", "**/*.ts", "**/*.tsx"],
+    "files": ["next-env.d.ts", "sanity.d.ts"],
     "exclude": ["node_modules"],
 }
