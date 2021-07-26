@@ -1,17 +1,39 @@
-import cn from 'classnames';
+import { ProjectConfig } from 'next-sanity/src/types';
 import Image from 'next/image';
 import React from 'react';
 import { imageBuilder } from '../../lib/sanity';
 import { SanityImageProps } from '../../types/sanity/SanityImage';
 
-const SanityImage = ({ imageObject, slug, alt }: SanityImageProps) => (
-    <Image width={1240}
-        height={540}
-        alt={alt}
-        className={cn('shadow-small', {
-        'hover:shadow-medium transition-shadow duration-200': slug,
-        })}
-        src={imageBuilder(imageObject).width(1240).height(540).url() || ''} />
-);
+const buildSrc = (imageObject: ProjectConfig | undefined, width: number | undefined, height: number | undefined) => {
+    if (!imageObject) {
+        return undefined;
+    }
+
+    if (!width || !height) {
+        return imageBuilder(imageObject).url();
+    }
+
+    return imageBuilder(imageObject).width(width).height(height).url();
+};
+
+const SanityImage = ({ className, imageObject, alt, width, height, url }: SanityImageProps) => {
+    const src = url || buildSrc(imageObject, width, height);
+    console.log(src);
+
+    return (
+        <>
+            {!!src && (
+                <>
+                    {!!width && !!height ? (
+                        <Image width={width} height={height} alt={alt} className={className} src={src} />
+                    ) : (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img alt={alt} className={className} src={src} />
+                    )}
+                </>
+            )}
+        </>
+    );
+};
 
 export default SanityImage;

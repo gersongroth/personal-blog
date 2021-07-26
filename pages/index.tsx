@@ -1,11 +1,12 @@
 import Head from 'next/head';
-import Container from '../components/container';
+import Container from '../components/common/container';
 import HeroPost from '../components/hero-post';
 import Header from '../components/home/Header';
 import Layout from '../components/layout';
 import MoreStories from '../components/more-stories';
 import { getAllPostsForHome, getPage } from '../lib/api';
 
+// TODO - types
 export default function Index({ allPosts, preview, page }: any) {
     const heroPost = allPosts[0];
     const morePosts = allPosts.slice(1);
