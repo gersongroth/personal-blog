@@ -12,10 +12,10 @@ export async function PostList({ authorSlug }: { authorSlug?: string }) {
     <>
       {author && (
         <h1 className="my-4 text-4xl font-bold leading-tight tracking-tight text-zinc-700 dark:text-zinc-300">
-          Posts by {author.title}
+          Artigos por {author.title}
         </h1>
       )}
-      {!posts && 'You must add at least one Post to your Bucket'}
+      {!posts && 'Você deve adicionar ao menos um artigo'}
       {posts &&
         posts.map((post) => {
           return (

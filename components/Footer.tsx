@@ -1,5 +1,4 @@
 import React from 'react';
-import CosmicLogo from './logos/CosmicLogo';
 
 export default function Footer(): JSX.Element {
   return (
@@ -10,14 +9,11 @@ export default function Footer(): JSX.Element {
         className="no-underline"
       >
         <div className="flex items-center space-x-2">
-          <CosmicLogo />
-          <span className="text-zinc-700 dark:text-zinc-300">
-            Proudly powered by Cosmic
-          </span>
+
         </div>
       </a>
       <div className="text-zinc-700 dark:text-zinc-300">
-        &copy;&nbsp;&nbsp;{new Date().getFullYear()} Cosmic
+        &copy;&nbsp;&nbsp;{new Date().getFullYear()} Gerson Groth
       </div>
     </footer>
   );

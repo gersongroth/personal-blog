@@ -28,14 +28,14 @@ export default function PostCard({ post }: { post: Post }) {
         </Link>
         <div>
           <span>
-            by{' '}
+            por{' '}
             <a
               href={`/author/${post.metadata.author?.slug}`}
               className="font-semibold text-green-600 dark:text-green-200"
             >
               {post.metadata.author?.title}
             </a>{' '}
-            on {helpers.stringToFriendlyDate(post.metadata.published_date)}
+            em {helpers.stringToFriendlyDate(post.metadata.published_date)}
           </span>
         </div>
       </div>
