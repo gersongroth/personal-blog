@@ -1,29 +1,25 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "lib": ["dom", "dom.iterable", "esnext", "webworker"],
-        "allowJs": true,
-        "skipLibCheck": true,
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "module": "esnext",
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "noEmit": true,
-        "newLine": "LF",
-        "jsx": "preserve",
-        "useDefineForClassFields": true,
-        "baseUrl": "./",
-        "paths": {
-            "@components/*": ["components/*"],
-            "@assets/*": ["assets/*"],
-            "@utils/*": ["utils/*"],
-        }
-    },
-    "include": ["pages", "public", "__mocks__", "__mocks__/.ts", "**/*.d.ts", "**/*.ts", "**/*.tsx"],
-    "files": ["next-env.d.ts", "sanity.d.ts"],
-    "exclude": ["node_modules"],
+  "compilerOptions": {
+    "target": "es2016",
+    "jsx": "preserve",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "noEmit": true,
+    "incremental": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx", "next.config.mjs"],
+  "exclude": ["node_modules"]
 }
